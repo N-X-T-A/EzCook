@@ -1,0 +1,185 @@
+.products-section {
+  width: 100%;
+}
+.product-list-title {
+  font-weight: 600;
+}
+.product-list {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+}
+.product-item {
+  display: flex;
+  justify-content: center;
+  width: calc(100% / 6);
+  background-color: white;
+  padding: 2%;
+  height: 100%;
+  flex-direction: column;
+}
+.product-item:hover {
+  cursor: pointer;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.product-image-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.product-image {
+  width: 100%;
+}
+.product-price {
+  font-weight: bold;
+}
+.product-info {
+  margin: 10px;
+}
+.product-rating {
+  gap: 0px;
+  display: flex;
+  align-items: center;
+}
+.icon-rate {
+  width: 12px;
+  height: auto;
+}
+.product-title {
+  text-overflow: ellipsis;
+  max-height: 100px;
+  overflow: hidden;
+  white-space: initial;
+  word-wrap: break-word;
+  line-height: 1.6;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  height: 75px;
+}
+.product-bestseller {
+  background-color: rgb(230, 241, 252);
+  color: rgb(0, 79, 154);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px;
+}
+.btn-add {
+  border: none;
+  width: 80px;
+  height: 35px;
+  border-radius: 50px;
+  background-color: #0071dc;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.btn-add:hover {
+  background-color: #00396e;
+  cursor: pointer;
+}
+.product-badge {
+  position: absolute;
+  top: 0px;
+}
+
+.product-add-button-container {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.product-fav-button-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.btn-fav {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-fav {
+  width: 24px;
+}
+
+.product-list-container {
+  position: relative;
+}
+.btn-arrow-left,
+.btn-arrow-right {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: 1px solid black;
+  background-color: white;
+}
+.btn-arrow-left,
+.btn-arrow-right:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.btn-arrow-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+.btn-arrow-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.btn_Subtract,
+.btn_Increment {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50px;
+  background-color: #0071dc;
+  color: white;
+}
+.btn_Subtract:hover,
+.btn_Increment:hover {
+  cursor: pointer;
+  background-color: #00396e;
+}
+.btn_Subtract {
+  margin-left: 5px;
+}
+.btn_Increment {
+  margin-right: 5px;
+}
+
+.total {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-inactive {
+  justify-content: space-between;
+  width: 100%;
+}
+.btn-inactive:hover {
+  background-color: #0071dc;
+}

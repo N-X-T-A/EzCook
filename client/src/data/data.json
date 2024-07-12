@@ -1,0 +1,158 @@
+{
+  "products": [
+    {
+      "title": "Featured Items",
+      "items": [
+        {
+          "id": 1,
+          "imageSrc": "/images/1.webp",
+          "price": 5.24,
+          "title": "Marketside Cinnamon Rolls, 16 oz Clamshell, 4 Count",
+          "rating": [1, 1, 1, 1, 0.5],
+          "isBestSeller": true
+        },
+        {
+          "id": 2,
+          "imageSrc": "/images/2.webp",
+          "price": 4.97,
+          "title": "Marketside Brioche Buns, 10.6 oz, 6 Count",
+          "rating": [1, 1, 1, 0.5, 0],
+          "isBestSeller": false
+        },
+        {
+          "id": 3,
+          "imageSrc": "/images/3.webp",
+          "price": 2.56,
+          "title": "bettergoods Plant-Based Unsweetened Original Almondmilk, Half Gallon",
+          "rating": [1, 1, 1, 0.5, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 4,
+          "imageSrc": "/images/4.webp",
+          "price": 2.17,
+          "title": "Great Value Deli Style Sliced Colby & Monterey Jack Cheese, 8 oz, 12 Slices (Plastic Packaging)",
+          "rating": [1, 1, 1, 0.5, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 5,
+          "imageSrc": "/images/5.webp",
+          "price": 2.63,
+          "title": "Oscar Mayer Classic Wieners Hot Dogs, 10 ct Pack",
+          "rating": [1, 1, 1, 1, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 6,
+          "imageSrc": "/images/6.webp",
+          "price": 4.18,
+          "title": "Freshness Guaranteed Premium Ready-to-Eat Deviled Egg Potato Salad Family Tub, 32 oz (Refrigerated)",
+          "rating": [1, 1, 1, 0, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 7,
+          "imageSrc": "/images/6.webp",
+          "price": 4.18,
+          "title": "Freshness Guaranteed Premium Ready-to-Eat Deviled Egg Potato Salad Family Tub, 32 oz (Refrigerated)",
+          "rating": [1, 1, 1, 0, 0],
+          "isBestSeller": true
+        }
+      ]
+    },
+    {
+      "title": "Picnic Items",
+      "items": [
+        {
+          "id": 11,
+          "imageSrc": "/images/1.webp",
+          "price": 5.24,
+          "title": "Marketside Cinnamon Rolls, 16 oz Clamshell, 4 Count",
+          "rating": [1, 1, 1, 1, 0.5],
+          "isBestSeller": true
+        },
+        {
+          "id": 12,
+          "imageSrc": "/images/2.webp",
+          "price": 4.97,
+          "title": "Marketside Brioche Buns, 10.6 oz, 6 Count",
+          "rating": [1, 1, 1, 0.5, 0],
+          "isBestSeller": false
+        },
+        {
+          "id": 13,
+          "imageSrc": "/images/3.webp",
+          "price": 2.56,
+          "title": "bettergoods Plant-Based Unsweetened Original Almondmilk, Half Gallon",
+          "rating": [1, 1, 1, 0.5, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 14,
+          "imageSrc": "/images/4.webp",
+          "price": 2.17,
+          "title": "Great Value Deli Style Sliced Colby & Monterey Jack Cheese, 8 oz, 12 Slices (Plastic Packaging)",
+          "rating": [1, 1, 1, 0.5, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 15,
+          "imageSrc": "/images/5.webp",
+          "price": 2.63,
+          "title": "Oscar Mayer Classic Wieners Hot Dogs, 10 ct Pack",
+          "rating": [1, 1, 1, 1, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 16,
+          "imageSrc": "/images/6.webp",
+          "price": 4.18,
+          "title": "Freshness Guaranteed Premium Ready-to-Eat Deviled Egg Potato Salad Family Tub, 32 oz (Refrigerated)",
+          "rating": [1, 1, 1, 0, 0],
+          "isBestSeller": true
+        },
+        {
+          "id": 17,
+          "imageSrc": "/images/6.webp",
+          "price": 4.18,
+          "title": "Freshness Guaranteed Premium Ready-to-Eat Deviled Egg Potato Salad Family Tub, 32 oz (Refrigerated)",
+          "rating": [1, 1, 1, 0, 0],
+          "isBestSeller": true
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "title": "Fresh Produce",
+      "items": [
+        "Shop All",
+        "Organic Produce ",
+        "Fresh Fruits ",
+        "Fresh Vegetables ",
+        "Salad Kits & Bowls ",
+        "Cut Fruits & Vegetables ",
+        "Fresh Dressings",
+        "Fresh Herbs",
+        "Salsa & Dips",
+        "Plant-based Protein & Tofu",
+        "Fresh Flowers"
+      ]
+    },
+    {
+      "title": "Meat and Seafood",
+      "items": [
+        "Shop All",
+        "Seafood buying guide",
+        "Beef buying guide ",
+        "Pork buying guide",
+        "Beef & Lamb ",
+        "Bacon, Hot Dogs, & Sausage ",
+        "Chicken ",
+        "Pork ",
+        "Organic and Plant-Based "
+      ]
+    }
+  ]
+}
