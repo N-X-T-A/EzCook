@@ -1,5 +1,6 @@
 .container-flex {
   display: flex;
+  overflow-x: hidden;
 }
 
 .main-container {
@@ -55,4 +56,13 @@
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.151);
   padding: 15px 0px;
+}
+.flex-col {
+  flex-direction: column !important;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
 }

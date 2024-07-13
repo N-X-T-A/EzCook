@@ -73,7 +73,7 @@ li {
 }
 
 .search-icon {
-  width: 16px;
+  width: 24px;
 }
 
 .account-cart-area {
@@ -149,18 +149,20 @@ li {
   width: 18px;
   height: 18px;
 }
-
+.my-items,
 .user-info {
   padding-left: 8px;
 }
 
+.reorder,
 .sign-in {
-  font-size: 14px;
+  font-size: 13px;
   padding-bottom: 4px;
 }
 
 .account-text {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .dialog-overlay {

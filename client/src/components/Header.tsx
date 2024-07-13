@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/components/header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useCounter } from "../context/CounterContext";
 
@@ -34,6 +35,15 @@ export default function Header() {
         </div>
         <nav aria-label="Account and Cart">
           <ul className="account-cart-area">
+            <li className="user-account-area">
+              <li className="user-account">
+                <FontAwesomeIcon icon={faHeart} className="user-icon" />
+                <div className="my-items">
+                  <div className="reorder">Reorder</div>
+                  <div className="account-text">My items</div>
+                </div>
+              </li>
+            </li>
             <li className="user-account-area">
               <li className="user-account" onClick={btnSignIn}>
                 <FontAwesomeIcon icon={faUser} className="user-icon" />

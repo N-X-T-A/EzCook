@@ -1,3 +1,154 @@
 .flex-start {
   justify-content: flex-start;
 }
+
+.cart-container {
+  flex-shrink: 1;
+  border-radius: 10px;
+  box-shadow: 0 0.0625rem 0.125rem 0.0625rem #00000026;
+  margin-top: 15px;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.cart-header {
+  flex: 1;
+  height: 50px;
+  background-color: #f2f8fd;
+  outline: 0;
+  border-color: #f1f1f2;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  display: flex;
+  align-items: center;
+}
+
+.cart-header-title {
+  margin-left: 15px;
+  font-weight: 700;
+  color: #2e2f32;
+  font-size: 1.3rem;
+}
+
+.cart-item {
+  display: flex;
+  position: relative;
+}
+.cart-item-title {
+  font-weight: 400;
+}
+.cart-item-image-container {
+  margin-left: 15px;
+}
+.cart-item-image {
+  width: 100px;
+}
+.cart-item-price {
+  font-weight: 200;
+}
+.cart-item-totalprice {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.cart-item-quantity {
+  width: 105px;
+  height: 34px;
+  border-radius: 50px;
+  border: 1px solid #a1a3a7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.cart-item-info {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.btnAdd,
+.btnSub {
+  width: 90%;
+  height: 90%;
+  border: none;
+  border-radius: 50px;
+  background-color: white;
+  margin: 0px 5px;
+}
+
+.btnAdd:hover,
+.btnSub:hover {
+  background-color: #74767c;
+  cursor: pointer;
+}
+
+.quantity {
+  width: 100%;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.leftSection {
+  flex: 1;
+}
+.rightSection {
+  margin-left: 15px;
+  margin-top: 15px;
+  flex: 0.3;
+  height: 350px;
+}
+
+.mg20 {
+  margin: 20px 50px;
+}
+.checkout-container {
+  /* display: flex;
+  height: 100%; */
+  box-shadow: 0 0.0625rem 0.125rem 0.0625rem #00000026;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-checkout {
+  width: 90%;
+  height: 50px;
+  border: none;
+  background-color: #0071dc;
+  color: white;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.total-price {
+  width: 150%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+.btnSignIn {
+  width: 200px;
+  height: 50px;
+  background-color: #0071dc;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.btnSignIn:hover {
+  background-color: #004f9a;
+}

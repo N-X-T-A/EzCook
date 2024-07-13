@@ -21,7 +21,8 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ products }) => {
   const navigate = useNavigate();
-  const { increment, subtract, productCounts } = useCounter();
+  const { increment, subtract, productCounts, handleAddClick, handleSubClick } =
+    useCounter();
 
   const [startIndexArray, setStartIndexArray] = useState<number[]>(() =>
     products.map(() => 0)
@@ -47,24 +48,6 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
         return newArray;
       });
     }
-  };
-
-  const handleAddClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    price: number,
-    productId: number
-  ) => {
-    e.stopPropagation();
-    increment(productId, price);
-  };
-
-  const handleSubClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    price: number,
-    productId: number
-  ) => {
-    e.stopPropagation();
-    subtract(productId, price);
   };
 
   return (
