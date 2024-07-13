@@ -62,11 +62,11 @@
       ]
     },
     {
-      "title": "Picnic Items",
+      "title": "Pack the perfect picnic",
       "items": [
         {
           "id": 11,
-          "imageSrc": "/images/1.webp",
+          "imageSrc": "/images/8.webp",
           "price": 5.24,
           "title": "Marketside Cinnamon Rolls, 16 oz Clamshell, 4 Count",
           "rating": [1, 1, 1, 1, 0.5],
@@ -74,15 +74,15 @@
         },
         {
           "id": 12,
-          "imageSrc": "/images/2.webp",
+          "imageSrc": "/images/9.webp",
           "price": 4.97,
           "title": "Marketside Brioche Buns, 10.6 oz, 6 Count",
           "rating": [1, 1, 1, 0.5, 0],
-          "isBestSeller": false
+          "isBestSeller": true
         },
         {
           "id": 13,
-          "imageSrc": "/images/3.webp",
+          "imageSrc": "/images/10.webp",
           "price": 2.56,
           "title": "bettergoods Plant-Based Unsweetened Original Almondmilk, Half Gallon",
           "rating": [1, 1, 1, 0.5, 0],
@@ -90,7 +90,7 @@
         },
         {
           "id": 14,
-          "imageSrc": "/images/4.webp",
+          "imageSrc": "/images/11.webp",
           "price": 2.17,
           "title": "Great Value Deli Style Sliced Colby & Monterey Jack Cheese, 8 oz, 12 Slices (Plastic Packaging)",
           "rating": [1, 1, 1, 0.5, 0],
