@@ -11,10 +11,20 @@ import React, {
 interface CounterContextType {
   count: number;
   totalAmount: number;
-  productCounts: { [productId: number]: number };
-  productTotals: { [productId: number]: number };
+  productCounts: { [productId: string]: number };
+  productTotals: { [productId: string]: number };
   increment: (productId: number, price: number) => void;
   subtract: (productId: number, price: number) => void;
+  handleAddClick: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    price: number,
+    productId: number
+  ) => void;
+  handleSubClick: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    price: number,
+    productId: number
+  ) => void;
 }
 
 const CounterContext = createContext<CounterContextType | undefined>(undefined);
@@ -80,7 +90,7 @@ export const CounterProvider: React.FC<{ children: ReactNode }> = ({
   const subtract = (productId: number, price: number) => {
     if (totalAmount > 0 && count > 0) {
       setCount((prev) => prev - 1);
-      setTotalAmount((prev) => prev - price);
+      setTotalAmount((prev) => Math.max(prev - price, 0));
 
       setProductCounts((prev) => {
         const newCount = (prev[productId] || 0) - 1;
@@ -108,6 +118,24 @@ export const CounterProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
+  const handleAddClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    price: number,
+    productId: number
+  ) => {
+    e.stopPropagation();
+    increment(productId, price);
+  };
+
+  const handleSubClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    price: number,
+    productId: number
+  ) => {
+    e.stopPropagation();
+    subtract(productId, price);
+  };
+
   return (
     <CounterContext.Provider
       value={{
@@ -117,6 +145,8 @@ export const CounterProvider: React.FC<{ children: ReactNode }> = ({
         productTotals,
         increment,
         subtract,
+        handleAddClick,
+        handleSubClick,
       }}
     >
       {children}
