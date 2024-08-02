@@ -33,23 +33,22 @@
 
 .cart-item {
   display: flex;
+  height: 200px;
+  flex-direction: column;
   position: relative;
 }
 .cart-item-title {
   font-weight: 400;
+  max-width: 85%;
 }
-.cart-item-image-container {
-  margin-left: 15px;
-}
+
 .cart-item-image {
-  width: 100px;
+  width: 130px;
 }
-.cart-item-price {
-  font-weight: 200;
-}
+
 .cart-item-totalprice {
   position: absolute;
-  top: 15px;
+  top: 5px;
   right: 15px;
   font-size: 16px;
   font-weight: bold;
@@ -62,14 +61,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: absolute;
   bottom: 15px;
   right: 15px;
 }
 
 .cart-item-info {
   margin-left: 15px;
-  margin-top: 5px;
+  height: 70%;
 }
 
 .btnAdd,
@@ -80,35 +78,51 @@
   border-radius: 50px;
   background-color: white;
   margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btnAdd:hover,
 .btnSub:hover {
   background-color: #74767c;
   cursor: pointer;
+  color: white;
 }
 
 .quantity {
   width: 100%;
   text-align: center;
 }
-
-.flex {
-  display: flex;
-  flex-direction: row;
-}
 .leftSection {
-  flex: 1;
+  width: 70%;
 }
 .rightSection {
   margin-left: 15px;
   margin-top: 15px;
-  flex: 0.3;
+  width: 30%;
   height: 350px;
 }
 
 .mg20 {
-  margin: 20px 50px;
+  margin: 20px 200px;
+}
+
+@media (max-width: 767px) {
+  .mg20 {
+    margin: 20px 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mg20 {
+    margin: 20px 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mg20 {
+    margin: 20px 150px;
+  }
 }
 .checkout-container {
   /* display: flex;
@@ -128,14 +142,6 @@
   color: white;
   border-radius: 50px;
   margin-top: 10px;
-}
-
-.total-price {
-  width: 150%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 50px;
 }
 
 .btnSignIn {

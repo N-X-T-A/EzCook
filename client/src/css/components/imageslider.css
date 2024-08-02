@@ -1,0 +1,35 @@
+.image-slider {
+  display: flex;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 110px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88%;
+}
+.main-image img {
+  width: 600px;
+  height: auto;
+}
+.border {
+  border: 2px solid #0071dc;
+}
+.icon {
+  width: 1rem !important;
+  height: 1rem !important;
+}

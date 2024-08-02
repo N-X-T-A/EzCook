@@ -1,71 +1,49 @@
 import React from "react";
 import Header from "../components/Header";
 import "../css/pages/home.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import data from "../data/data.json";
 import ProductList from "../components/ProductList";
 import { CounterProvider } from "../context/CounterContext";
+import { Categories } from "../components/Categories";
+import Footer from "../components/Footer";
 
 export default function Home() {
-  const [openCategories, setOpenCategories] = useState<boolean[]>(
-    data.categories.map(() => false)
-  );
-
-  const toggleCategory = (index: number) => {
-    const updatedCategories = openCategories.map((isOpen, i) =>
-      i === index ? !isOpen : isOpen
-    );
-    setOpenCategories(updatedCategories);
-  };
-
   return (
     <CounterProvider>
-      <Header />
-      <div className="container-flex">
-        <div className="main-container">
-          <section className="category-section">
-            <h3 className="section-title">Categories</h3>
-            <div className="line"></div>
-            <div>
-              {data.categories.map((category, index) => (
-                <ul
-                  className="category-list"
-                  key={index}
-                  onClick={() => toggleCategory(index)}
-                >
-                  <div className="category-item">
-                    <img src={`./images/category${index + 1}.webp`} alt="" />
-                    <p className="category-title">{category.title}</p>
-                    {!openCategories[index] ? (
-                      <img
-                        className="icon-arrow"
-                        src="./icons/down-arrow.png"
-                        alt=""
-                      />
-                    ) : (
-                      <img
-                        className="icon-arrow"
-                        src="./icons/up-arrow.png"
-                        alt=""
-                      />
-                    )}
-                  </div>
-                  {openCategories[index] && (
-                    <div>
-                      {category.items.map((item, itemIndex) => (
-                        <li className="subcategory-item" key={itemIndex}>
-                          {item}
-                        </li>
-                      ))}
+      <div className="flex-column min-h-screen shadow-2 transform">
+        <Header />
+        <div className="flex flex-column flex-auto relative z-0">
+          <div className="flex-auto relative">
+            <div className="main-content">
+              <div>
+                <main className="px-6">
+                  <div className="flex-column h-full">
+                    <div className="h-full relative">
+                      <div className="flex flex-wrap mx-[-0.5rem] flex-row">
+                        <div className="flex-none w-1/4 px-2">
+                          <Categories categories={data.categories} />
+                        </div>
+                        <div className="flex-none w-3/4 px-2">
+                          <div className="flex flex-col h-full">
+                            {data.products.map((product) => (
+                              <ProductList
+                                key={product.title}
+                                title={product.title}
+                                products={product.items}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </ul>
-              ))}
+                  </div>
+                </main>
+              </div>
             </div>
-          </section>
-          <ProductList products={data.products} />
+          </div>
         </div>
+        <Footer />
       </div>
     </CounterProvider>
   );

@@ -13,6 +13,17 @@ export default function Header() {
     setOpenDialog(!openDialog);
   };
   const { count, totalAmount } = useCounter();
+
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+  };
+
+  const handleClearClick = () => {
+    setSearchValue("");
+  };
+
   return (
     <>
       <div className="header-container">
@@ -24,15 +35,27 @@ export default function Header() {
         >
           <img
             className="logo-image"
-            src="/public/images/walmart-logo-blue-gold.png"
+            src="/images/walmart-logo-blue-gold.png"
           />
         </div>
-        <div className="search-area">
-          <input className="search-input" placeholder="Search" />
-          <button className="search-button">
-            <img className="search-icon" src="/public/icons/searchIcon.png" />
+
+        <form action="" className="search-area">
+          <input
+            className="search-input"
+            placeholder="Search"
+            value={searchValue}
+            onChange={handleInputChange}
+          />
+          {searchValue && (
+            <button className="clear-button" onClick={handleClearClick}>
+              <img className="close-icon" src="/icons/close.png" />
+            </button>
+          )}
+          <button type="submit" className="search-button">
+            <img className="search-icon" src="/icons/searchIcon.png" />
           </button>
-        </div>
+        </form>
+
         <nav aria-label="Account and Cart">
           <ul className="account-cart-area">
             <li className="user-account-area">
@@ -58,7 +81,7 @@ export default function Header() {
               onClick={() => navigate("/cart")}
             >
               <li className="shopping-cart">
-                <img className="cart-icon" src="/public/icons/cart.png" />
+                <img className="cart-icon" src="/icons/cart.png" />
                 <span className="cart-count">{count}</span>
               </li>
               <span className="cart-total-amount">

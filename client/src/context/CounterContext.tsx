@@ -4,8 +4,6 @@ import React, {
   useState,
   useEffect,
   ReactNode,
-  Dispatch,
-  SetStateAction,
 } from "react";
 
 interface CounterContextType {
@@ -23,6 +21,10 @@ interface CounterContextType {
   handleSubClick: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     price: number,
+    productId: number
+  ) => void;
+  handleRemove: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     productId: number
   ) => void;
 }
@@ -118,6 +120,26 @@ export const CounterProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
+  const remove = (productId: number) => {
+    if (productCounts[productId] > 0) {
+      const countToRemove = productCounts[productId];
+      const totalToRemove = productTotals[productId];
+
+      setCount((prev) => prev - countToRemove);
+      setTotalAmount((prev) => Math.max(prev - totalToRemove, 0));
+
+      setProductCounts((prev) => {
+        const { [productId]: _, ...rest } = prev;
+        return rest;
+      });
+
+      setProductTotals((prev) => {
+        const { [productId]: _, ...rest } = prev;
+        return rest;
+      });
+    }
+  };
+
   const handleAddClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     price: number,
@@ -136,6 +158,14 @@ export const CounterProvider: React.FC<{ children: ReactNode }> = ({
     subtract(productId, price);
   };
 
+  const handleRemove = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    productId: number
+  ) => {
+    e.stopPropagation();
+    remove(productId);
+  };
+
   return (
     <CounterContext.Provider
       value={{
@@ -147,6 +177,7 @@ export const CounterProvider: React.FC<{ children: ReactNode }> = ({
         subtract,
         handleAddClick,
         handleSubClick,
+        handleRemove,
       }}
     >
       {children}
