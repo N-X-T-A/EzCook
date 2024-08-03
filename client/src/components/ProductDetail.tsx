@@ -6,7 +6,10 @@ import ImageSlider from "./ImageSlider";
 import "../css/pages/productDetail.css";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import ProductList from "./ProductList";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const productData = data.products;
+
 interface Product {
   id: number;
   imageSrc: string[];
@@ -16,42 +19,48 @@ interface Product {
   isBestSeller: boolean;
   sale: number;
 }
+
 export default function ProductDetail() {
   const { id, slug } = useParams<{ id: string; slug: string }>();
   const productId = parseInt(id ?? "", 10);
   const location = useLocation();
-
-  // State để lưu thông tin sản phẩm
-  const [product, setProduct] = useState<Product | undefined>(() =>
-    productData
-      .flatMap((category) => category.items)
-      .find((item) => item.title === slug)
-  );
-
-  // Cập nhật lại sản phẩm khi slug thay đổi
-  useEffect(() => {
-    const newProduct = productData
-      .flatMap((category) => category.items)
-      .find((item) => item.title === slug);
-    setProduct(newProduct);
-  }, [slug, location.key]); // Cập nhật khi slug hoặc location thay đổi
-
-  if (!product) {
-    return <div>Product not found</div>;
-  }
-
   const navigate = useNavigate();
-  const { handleAddClick } = useCounter();
-  const [isAddToCart, setIsAddToCart] = useState(false);
+  const { handleAddClick, handleSubClick, productCounts } = useCounter();
 
-  const handleAddToCart = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    handleAddClick(e, product.price, product.id);
-    setIsAddToCart(true);
-  };
+  // State to manage loading state and product data
+  const [loading, setLoading] = useState(true);
+  const [product, setProduct] = useState<Product | undefined>(undefined);
 
-  if (isAddToCart) navigate("/cart");
+  useEffect(() => {
+    setTimeout(() => {
+      const newProduct = productData
+        .flatMap((category) => category.items)
+        .find((item) => item.title === slug);
+      setProduct(newProduct);
+      setLoading(false);
+    }, 1500);
+  }, [slug, location.key]);
+
+  if (loading || !product) {
+    return (
+      <div className="flex h-full relative">
+        <div className="flex-none w-4/6 px-2">
+          <Skeleton height={500} />
+          <Skeleton height={400} />
+          <Skeleton height={300} />
+          <Skeleton height={500} />
+        </div>
+        <div className="flex-none w-2/6 px-2">
+          <div className="sticky top-24">
+            <Skeleton height={30} />
+            <Skeleton height={30} />
+            <Skeleton height={60} />
+            <Skeleton height={40} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const comments = [
     {
@@ -256,12 +265,41 @@ export default function ProductDetail() {
                 <span className="product-detail-price">${product.price}</span>
               )}
             </div>
-            <button
-              className="product-detail-btnAdd mv2"
-              onClick={handleAddToCart}
+            <div
+              className="relative dib w-1/2"
+              onClick={(e) => e.stopPropagation()}
             >
-              Add to cart
-            </button>
+              {productCounts[product.id] > 0 ? (
+                <div className="btn-product-container">
+                  <button
+                    className="btn-Add"
+                    onClick={(e) =>
+                      handleSubClick(e, product.price, product.id)
+                    }
+                  >
+                    <span>-</span>
+                  </button>
+                  <div className="total hover:cursor-text">
+                    {productCounts[product.id]}
+                  </div>
+                  <button
+                    className="btn-Sub"
+                    onClick={(e) =>
+                      handleAddClick(e, product.price, product.id)
+                    }
+                  >
+                    <span>+</span>
+                  </button>
+                </div>
+              ) : (
+                <button
+                  className="btn-Add-product b pl-2 pr-2 flex items-center justify-center w-auto shadow-1"
+                  onClick={(e) => handleAddClick(e, product.price, product.id)}
+                >
+                  <span>+ Add</span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
