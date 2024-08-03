@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full h-40 blue mt-5">
       <div className="h-1/2"></div>
       <div className="line bg-white"></div>
-      <div className="flex justify-center items-center h-1/2 text-white text-xs">
+      <div className="flex justify-center items-center text-white text-xs">
         <span>© 2024 EzCook. All Rights Reserved.</span>
       </div>
     </footer>

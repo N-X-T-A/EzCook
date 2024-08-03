@@ -24,7 +24,7 @@ export const Categories: React.FC<Category> = ({ categories }) => {
     <div className="flex-column h-full">
       <div className="h-full relative">
         <section>
-          <h2 className="categories">Categories</h2>
+          <h2 className="categories font-medium">Categories</h2>
           {categories.map((category, index) => (
             <ul className="pl-0 mt0 list ml4 mr3">
               <li>
@@ -39,7 +39,7 @@ export const Categories: React.FC<Category> = ({ categories }) => {
                     className="self-center"
                     alt=""
                   />
-                  <span className="category-title dark-gray  w-90 flex-auto ml3">
+                  <span className="category-title dark-gray  w-90 flex-auto ml3 font-medium">
                     {category.title}
                   </span>
                   {!openCategories[index] ? (

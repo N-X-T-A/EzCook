@@ -24,6 +24,8 @@ export default function Header() {
     setSearchValue("");
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div className="header-container">
@@ -39,21 +41,28 @@ export default function Header() {
           />
         </div>
 
-        <form action="" className="search-area">
-          <input
-            className="search-input"
-            placeholder="Search"
-            value={searchValue}
-            onChange={handleInputChange}
-          />
-          {searchValue && (
-            <button className="clear-button" onClick={handleClearClick}>
-              <img className="close-icon" src="/icons/close.png" />
+        <form action="" className="flex flex-1 flex-col relative">
+          <div className="search-area">
+            <input
+              className="search-input"
+              placeholder="Search"
+              value={searchValue}
+              onChange={handleInputChange}
+              onFocus={() => setIsOpen(true)}
+              // onBlur={() => setIsOpen(false)}
+            />
+            {searchValue && (
+              <button className="clear-button" onClick={handleClearClick}>
+                <img className="close-icon" src="/icons/close.png" />
+              </button>
+            )}
+            <button type="submit" className="search-button">
+              <img className="search-icon" src="/icons/searchIcon.png" />
             </button>
-          )}
-          <button type="submit" className="search-button">
-            <img className="search-icon" src="/icons/searchIcon.png" />
-          </button>
+            {isOpen && (
+              <div className="w-full bg-white h-[100px] absolute top-[53px] shadow-1"></div>
+            )}
+          </div>
         </form>
 
         <nav aria-label="Account and Cart">

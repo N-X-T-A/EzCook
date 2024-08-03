@@ -20,8 +20,7 @@ li {
   flex: 1 1 auto;
   min-height: 0;
   min-width: 0;
-  border-radius: 100px;
-  margin-right: 10px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   position: relative;
@@ -62,7 +61,7 @@ li {
   height: 40px;
   padding: 10px;
   border-radius: 100%;
-  right: 0;
+  right: 10px;
   border: none;
   display: flex;
   justify-content: center;

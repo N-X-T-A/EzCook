@@ -85,7 +85,7 @@ const ProductList: React.FC<ProductListProps> = ({
                       </span>
                     )}
                   </div>
-                  <div className="relative">
+                  <div className="flex justify-center relative">
                     <div className="relative overflow-hidden product-info">
                       <span>
                         <button
